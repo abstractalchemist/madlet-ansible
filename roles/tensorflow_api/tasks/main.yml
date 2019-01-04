@@ -1,0 +1,6 @@
+- name: install nodesrc
+  shell: curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+- name: install node
+  package:
+    name: nodejs
+    state: latest

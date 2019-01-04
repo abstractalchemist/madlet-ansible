@@ -1,0 +1,12 @@
+- name: add required repo
+  copy:
+    src: "{{ item }}"
+    dest: /etc/yum.repos.d/
+  with_items:
+    - rabbitmq.repo
+    - rabbitmq_erlang.repo
+- name: install rabbitmq
+  package:
+    name: rabbitmq-server
+    state: latest
+
