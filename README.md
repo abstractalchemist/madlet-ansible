@@ -1,4 +1,4 @@
-Ansible Build for MADLET framework
+#Ansible Build for MADLET framework
 
 Requires
 - python >= 3.7
@@ -9,10 +9,10 @@ Requires
 - docker
 
 Installation Instructions
-# Install conda
-# conda create -n madlet
-# pip install -U pip==9.0.3
-# pip install docker==2.0.7 ansible-container[docker] ansible
+1) Install conda
+2) conda create -n madlet
+3) pip install -U pip==9.0.3
+4) pip install docker==2.0.7 ansible-container[docker] ansible
 
 Files
 - dev - hosts file for local development
