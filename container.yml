@@ -59,13 +59,22 @@ services:
   http_api:
     from: centos:7
     ports:
-      - 80:8080
+      - 8090:80
     roles:
       - http_api
+    command: node /app/index.js
+    environment:
+      NODE_ENV: production
   tensorflow_api:
     from: centos:7
     roles:
       - tensorflow_api
+    ports:
+      - 8091:80
+    command: node /app/index.js
+    environment:
+      NODE_ENV: production
+
   # Add your containers here, specifying the base image you want to build from.
   # To use this example, uncomment it and delete the curly braces after services key.
   # You may need to run `docker pull ubuntu:trusty` for this to work.

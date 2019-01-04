@@ -1,4 +1,4 @@
---- #
+--- # Build file for running on local machine on an ec2 instance
 - hosts: local
   user: ec2-user
   become: yes
@@ -7,4 +7,5 @@
   gather_facts: yes
   roles:
     - rabbitmq
+    - http_api
 

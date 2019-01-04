@@ -13,3 +13,8 @@ Installation Instructions
 # conda create -n madlet
 # pip install -U pip==9.0.3
 # pip install docker==2.0.7 ansible-container[docker] ansible
+
+Files
+- dev - hosts file for local development
+- production - hosts file for production deployment
+- container.yml - service specification file for docker deployment

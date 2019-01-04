@@ -1,6 +1,25 @@
 - name: install nodesrc
-  shell: curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+  get_url: 
+    url: https://rpm.nodesource.com/setup_11.x
+    dest: /tmp/setup.sh
+- name: exec it
+  shell: sh /tmp/setup.sh
 - name: install node
   package:
     name: nodejs
     state: latest
+- name: reate app dir
+  file:
+    state: directory
+    name: /app
+- name: copy app files
+  copy:
+    dest: /app
+    src: "{{ item }}"
+  with_items:
+    - package.json
+    - src/index.js
+- name: install packages
+  shell: npm i
+  args:
+    chdir: /app
